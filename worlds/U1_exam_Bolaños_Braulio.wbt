@@ -1,0 +1,150 @@
+#VRML_SIM R2019a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.9280701973999801 0.35924431990825956 0.09812862636159848 0.5724818431601035
+  position 0.34893147952410924 0.8344878482057884 0.8520350212670784
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+}
+Solid {
+  translation 0 0.2 0
+  children [
+    DEF Helicebase Group {
+      children [
+        Transform {
+          translation -0.005 0.2 0
+          rotation 0 0 1 1.5707963220000003
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0 1 0
+                }
+              }
+              geometry Cylinder {
+                height 0.1
+                radius 0.05
+              }
+            }
+          ]
+        }
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position -19.78103701447851
+            anchor 0.05 0.2 0
+          }
+          endPoint Solid {
+            translation 0.05 0.2 0
+            rotation 1 5.098153223100218e-14 1.4910268345992882e-13 2.1151814193263867
+            children [
+              DEF Helix Group {
+                children [
+                  Transform {
+                    translation 0 -0.17 0
+                    children [
+                      DEF panel Shape {
+                        appearance DEF Color2 Appearance {
+                          material Material {
+                            diffuseColor 1 0 0
+                          }
+                        }
+                        geometry Box {
+                          size 0.01 0.1 0.05
+                        }
+                      }
+                    ]
+                  }
+                  Transform {
+                    translation 0 0.17 0
+                    children [
+                      USE panel
+                    ]
+                  }
+                  Transform {
+                    translation 0 0.12020815308990583 0.12020815251352027
+                    rotation 1 0 0 0.7853981610000004
+                    children [
+                      USE panel
+                    ]
+                  }
+                  Transform {
+                    translation 0 -0.120208 -0.120208
+                    rotation 1 0 0 0.7853981610000004
+                    children [
+                      USE panel
+                    ]
+                  }
+                  Transform {
+                    translation 0 0.12020815193713462 -0.12020815366629152
+                    rotation 0.9999999999999999 0 0 2.3561944830000003
+                    children [
+                      USE panel
+                    ]
+                  }
+                  Transform {
+                    translation 0 -0.120208 0.120208
+                    rotation 0.9999999999999999 0 0 2.3561944830000003
+                    children [
+                      USE panel
+                    ]
+                  }
+                  Transform {
+                    translation 0 -4.075662203142233e-09 -0.16999999999999998
+                    rotation -1 0 0 4.712389004359173
+                    children [
+                      USE panel
+                    ]
+                  }
+                  Transform {
+                    translation 0 4.07566e-09 0.17
+                    rotation -1 0 0 4.712389004359173
+                    children [
+                      USE panel
+                    ]
+                  }
+                  Transform {
+                    children [
+                      DEF Molino Shape {
+                        appearance USE Color2
+                        geometry Box {
+                          size 0.01 0.25 0.01
+                        }
+                      }
+                    ]
+                  }
+                  Transform {
+                    rotation 1 0 0 1.5707963220000003
+                    children [
+                      USE Molino
+                    ]
+                  }
+                  Transform {
+                    rotation 1 0 0 2.3561944830000003
+                    children [
+                      USE Molino
+                    ]
+                  }
+                  Transform {
+                    rotation -1 0 0 5.497787165359173
+                    children [
+                      USE Molino
+                    ]
+                  }
+                ]
+              }
+            ]
+            name "Helix"
+            boundingObject USE Helix
+            physics Physics {
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
