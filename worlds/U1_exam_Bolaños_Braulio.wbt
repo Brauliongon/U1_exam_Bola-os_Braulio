@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.009538113892357484 -0.9909401778353585 -0.13396487724401573 3.2824663547296096
-  position -0.15262848490744302 4.245672186410307 -7.828948503026192
+  orientation 0.01696937062431656 -0.9953475518859392 0.09484351013792279 2.7891134198015197
+  position -1.0006439775446938 3.6460157105381414 -2.315123290461219
 }
 TexturedBackground {
 }
@@ -19,21 +19,6 @@ Solid {
       translation 0 1 0
       children [
         Transform {
-          translation 0 1.270000000000001 0
-          children [
-            Shape {
-              appearance Appearance {
-                material Material {
-                  diffuseColor 0 0 1
-                }
-              }
-              geometry Box {
-                size 1 0.05 1
-              }
-            }
-          ]
-        }
-        Transform {
           translation 0 2.019999999999999 0
           children [
             Shape {
@@ -47,6 +32,31 @@ Solid {
               }
             }
           ]
+        }
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position -19.78103701447851
+            axis 0 0 1
+            anchor -0.09999999999999999 2.7 0
+          }
+          endPoint Solid {
+            translation -0.09999999999999999 2.7 0
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 0 1 0
+                  }
+                }
+                geometry Box {
+                  size 0.1 0.2 0.005
+                }
+              }
+            ]
+            name "Helix(1)"
+            physics Physics {
+            }
+          }
         }
         Transform {
           translation 0 0 -1
@@ -126,7 +136,7 @@ Solid {
       ]
     }
     DEF Helicebase Transform {
-      translation 0.2200000000000001 3.4899999999999842 0
+      translation 0.09000000000000007 3.4899999999999842 0
       children [
         Transform {
           translation -0.005 0.2 0
