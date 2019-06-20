@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.9280701973999801 0.35924431990825956 0.09812862636159848 0.5724818431601035
-  position 0.34893147952410924 0.8344878482057884 0.8520350212670784
+  orientation 0.009538113892357484 -0.9909401778353585 -0.13396487724401573 3.2824663547296096
+  position -0.15262848490744302 4.245672186410307 -7.828948503026192
 }
 TexturedBackground {
 }
@@ -13,8 +13,120 @@ Floor {
 }
 Solid {
   translation 0 0.2 0
+  rotation 0 0 1 6.283185307179586
   children [
-    DEF Helicebase Group {
+    DEF Base Transform {
+      translation 0 1 0
+      children [
+        Transform {
+          translation 0 1.270000000000001 0
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0 0 1
+                }
+              }
+              geometry Box {
+                size 1 0.05 1
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 2.019999999999999 0
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0 0 1
+                }
+              }
+              geometry Box {
+                size 0.1 1.5 0.1
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -1
+          rotation 0 0 -1 4.712389004359173
+          children [
+            DEF Barra Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0 0 1
+                }
+              }
+              geometry Cylinder {
+                radius 0.035
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 1
+          rotation 0 0 -1 4.712389004359173
+          children [
+            USE Barra
+          ]
+        }
+        Transform {
+          translation 1 0 0
+          rotation -1 0 0 4.712389004359173
+          children [
+            USE Barra
+          ]
+        }
+        Transform {
+          translation -1 0 0
+          rotation -1 0 0 4.712389004359173
+          children [
+            USE Barra
+          ]
+        }
+        Transform {
+          translation 1 0 -1
+          rotation -0.7071067811865475 0 -0.7071067811865475 5.699130716894473
+          children [
+            DEF POSTE Shape {
+              appearance DEF Color1 Appearance {
+                material Material {
+                  diffuseColor 0 0 1
+                }
+              }
+              geometry Cylinder {
+                height 3
+                radius 0.035
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -1 0 -1
+          rotation -0.7071068905932484 0 0.7071066717798298 5.699130716894473
+          children [
+            USE POSTE
+          ]
+        }
+        Transform {
+          translation -1 0 1
+          rotation 0.7071067811865476 0 0.7071067811865476 5.699130716894473
+          children [
+            USE POSTE
+          ]
+        }
+        Transform {
+          translation 1 0 1
+          rotation 0.7071068905932484 0 -0.7071066717798297 5.699130716894473
+          children [
+            USE POSTE
+          ]
+        }
+      ]
+    }
+    DEF Helicebase Transform {
+      translation 0.2200000000000001 3.4899999999999842 0
       children [
         Transform {
           translation -0.005 0.2 0
@@ -39,8 +151,8 @@ Solid {
             anchor 0.05 0.2 0
           }
           endPoint Solid {
-            translation 0.05 0.2 0
-            rotation 1 5.098153223100218e-14 1.4910268345992882e-13 2.1151814193263867
+            translation 0.05 0.19999215977030949 4.087145861765337e-11
+            rotation 1 5.0859067191280154e-14 1.4903366608012502e-13 2.115181419326384
             children [
               DEF Helix Group {
                 children [
