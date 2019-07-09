@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.01696937062431656 -0.9953475518859392 0.09484351013792279 2.7891134198015197
-  position -1.0006439775446938 3.6460157105381414 -2.315123290461219
+  orientation -0.0020182051060672257 0.9965967751208996 0.08240627807863139 3.0927872109520327
+  position -0.3769796356569907 4.092684528793437 -0.7002578652222105
 }
 TexturedBackground {
 }
@@ -18,46 +18,6 @@ Solid {
     DEF Base Transform {
       translation 0 1 0
       children [
-        Transform {
-          translation 0 2.019999999999999 0
-          children [
-            Shape {
-              appearance Appearance {
-                material Material {
-                  diffuseColor 0 0 1
-                }
-              }
-              geometry Box {
-                size 0.1 1.5 0.1
-              }
-            }
-          ]
-        }
-        HingeJoint {
-          jointParameters HingeJointParameters {
-            position -19.78103701447851
-            axis 0 0 1
-            anchor -0.09999999999999999 2.7 0
-          }
-          endPoint Solid {
-            translation -0.09999999999999999 2.7 0
-            children [
-              Shape {
-                appearance Appearance {
-                  material Material {
-                    diffuseColor 0 1 0
-                  }
-                }
-                geometry Box {
-                  size 0.1 0.2 0.005
-                }
-              }
-            ]
-            name "Helix(1)"
-            physics Physics {
-            }
-          }
-        }
         Transform {
           translation 0 0 -1
           rotation 0 0 -1 4.712389004359173
@@ -133,6 +93,17 @@ Solid {
             USE POSTE
           ]
         }
+        Transform {
+          translation 0 1.2600000000000007 0
+          children [
+            Shape {
+              appearance USE Color1
+              geometry Box {
+                size 1.1 0.1 1.1
+              }
+            }
+          ]
+        }
       ]
     }
     DEF Helicebase Transform {
@@ -143,9 +114,9 @@ Solid {
           rotation 0 0 1 1.5707963220000003
           children [
             Shape {
-              appearance Appearance {
+              appearance DEF Color2 Appearance {
                 material Material {
-                  diffuseColor 0 1 0
+                  diffuseColor 1 1 0
                 }
               }
               geometry Cylinder {
@@ -157,24 +128,20 @@ Solid {
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position -19.78103701447851
+            position -19.781031781046394
             anchor 0.05 0.2 0
           }
           endPoint Solid {
-            translation 0.05 0.19999215977030949 4.087145861765337e-11
-            rotation 1 5.0859067191280154e-14 1.4903366608012502e-13 2.115181419326384
+            translation 0.05000000000000002 0.19997647931092774 -3.1962303761795194e-13
+            rotation 1 5.0613672852074766e-14 1.488955441872775e-13 2.1151866527584957
             children [
               DEF Helix Group {
                 children [
                   Transform {
                     translation 0 -0.17 0
                     children [
-                      DEF panel Shape {
-                        appearance DEF Color2 Appearance {
-                          material Material {
-                            diffuseColor 1 0 0
-                          }
-                        }
+                      DEF pad Shape {
+                        appearance USE Color2
                         geometry Box {
                           size 0.01 0.1 0.05
                         }
@@ -184,54 +151,56 @@ Solid {
                   Transform {
                     translation 0 0.17 0
                     children [
-                      USE panel
+                      USE pad
                     ]
                   }
                   Transform {
                     translation 0 0.12020815308990583 0.12020815251352027
                     rotation 1 0 0 0.7853981610000004
                     children [
-                      USE panel
+                      USE pad
                     ]
                   }
                   Transform {
                     translation 0 -0.120208 -0.120208
                     rotation 1 0 0 0.7853981610000004
                     children [
-                      USE panel
+                      USE pad
                     ]
                   }
                   Transform {
                     translation 0 0.12020815193713462 -0.12020815366629152
                     rotation 0.9999999999999999 0 0 2.3561944830000003
                     children [
-                      USE panel
+                      USE pad
                     ]
                   }
                   Transform {
                     translation 0 -0.120208 0.120208
                     rotation 0.9999999999999999 0 0 2.3561944830000003
                     children [
-                      USE panel
+                      USE pad
+                      USE pad
                     ]
                   }
                   Transform {
                     translation 0 -4.075662203142233e-09 -0.16999999999999998
                     rotation -1 0 0 4.712389004359173
                     children [
-                      USE panel
+                      USE pad
+                      USE pad
                     ]
                   }
                   Transform {
                     translation 0 4.07566e-09 0.17
                     rotation -1 0 0 4.712389004359173
                     children [
-                      USE panel
+                      USE pad
                     ]
                   }
                   Transform {
                     children [
-                      DEF Molino Shape {
+                      DEF Mill Shape {
                         appearance USE Color2
                         geometry Box {
                           size 0.01 0.25 0.01
@@ -242,19 +211,19 @@ Solid {
                   Transform {
                     rotation 1 0 0 1.5707963220000003
                     children [
-                      USE Molino
+                      USE Mill
                     ]
                   }
                   Transform {
                     rotation 1 0 0 2.3561944830000003
                     children [
-                      USE Molino
+                      USE Mill
                     ]
                   }
                   Transform {
                     rotation -1 0 0 5.497787165359173
                     children [
-                      USE Molino
+                      USE Mill
                     ]
                   }
                 ]
@@ -262,6 +231,63 @@ Solid {
             ]
             name "Helix"
             boundingObject USE Helix
+            physics Physics {
+            }
+          }
+        }
+        Transform {
+          translation -0.09999999999999999 -0.5000000000000002 0
+          children [
+            Shape {
+              appearance USE Color2
+              geometry Box {
+                size 0.1 1.5 0.1
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.20000000000000004 0.20000000000000007 0
+          children [
+            Shape {
+              appearance USE Color2
+              geometry Box {
+                size 0.1 0.1 0.1
+              }
+            }
+          ]
+        }
+        Transform {
+          translation -0.3599999971230622 0.20000000517848848 0
+          rotation 0 0 0.9999999999999999 4.712388966
+          children [
+            Shape {
+              appearance USE Color2
+              geometry Cylinder {
+                height 0.25
+                radius 0.01
+              }
+            }
+          ]
+        }
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            axis 0 1 0
+            anchor -0.48 0.19999999999999998 0
+            minStop -0.79
+            maxStop 0.79
+          }
+          endPoint Solid {
+            translation -0.5247601023742395 0.19999999999999998 -0.001292056331193496
+            children [
+              Shape {
+                appearance USE Color2
+                geometry DEF cola Box {
+                  size 0.1 0.05 0.015
+                }
+              }
+            ]
+            boundingObject USE cola
             physics Physics {
             }
           }
